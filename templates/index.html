@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<!-- Not in use code to send private messages  -->
+<!-- Username<input type="text" id="send_to_username">
+<br>
+<br>
+Message<input type="text" id="private_message">
+<button id="send_private_message">Send</button> -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Username Change</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <h3>Input Your Desired Username: </h3>
+                    <br>
+                    <input type="text" id='username'>
+            </div>
+            <div class="modal-footer">
+              <button type="button" href="/" id="send_username" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+        <!-- Main page -->
+        <div class="container">
+            <!-- Room Selection -->
+            <!-- <nav id='sidebar'>
+                <h4>ROOMS</h4>
+                <div class=  "col-sm-3">
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">#</div>
+                          </div>
+                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Room Name">
+                          <button id='create_room_btn'>Create</button>
+            
+                        </div>
+                      </div>
+                <div id='room_list' >
+                    {% for room in rooms %}
+                        <a class = 'select-room'>{{ room }}</a>
+                    {% endfor %}
+                </div>                
+            </nav> -->
+            <!-- Message Area -->
+            <div id ='rightside_panel'>
+                <!-- Dispay message area -->
+                <div id='display_message'>
+                  
+                </div>
+                <!-- User Input Area -->
+                <div id='input_area'>
+                    <input id='user_message' placeholder="Type Here" type="text" autocomplete="off" autofocus>
+                    <button type="submit" id='send_button' class="btn btn-primary">Send</button>
+                </div>
+
+            </div>
+
+        </div>
+            
+      
+
+
+{% endblock %}

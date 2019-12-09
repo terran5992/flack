@@ -1,0 +1,167 @@
+html{
+  height: 100%;
+}
+
+form{
+    margin: 0 auto;
+  }
+
+  body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+  #menu-toggle {
+    display: none;
+  }
+}
+
+.speech-wrapper {
+  padding: 0px 0px;
+}
+.speech-wrapper .bubble {
+  width: 240px;
+  height: auto;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 6px;
+  box-shadow: 2px 8px 5px #000;
+  position: relative;
+  margin: 0 0 25px;
+}
+.speech-wrapper .bubble.alt {
+  margin: 0 0 0 60px;
+}
+.speech-wrapper .bubble .txt {
+  padding: 8px 55px 8px 14px;
+}
+.speech-wrapper .bubble .txt .name {
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0 0 4px;
+  color: #3498db;
+}
+.speech-wrapper .bubble .txt .name span {
+  font-weight: normal;
+  color: #b3b3b3;
+}
+.speech-wrapper .bubble .txt .name.alt {
+  color: #2ecc71;
+}
+.speech-wrapper .bubble .txt .message {
+  font-size: 12px;
+  margin: 0;
+  color: #2b2b2b;
+  padding-bottom: 15px;
+}
+.speech-wrapper .bubble .txt .timestamp {
+  font-size: 11px;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  text-transform: uppercase;
+  color: #999;
+}
+.speech-wrapper .bubble .bubble-arrow {
+  position: absolute;
+  width: 0;
+  bottom: 42px;
+  left: -16px;
+  height: 0;
+}
+.speech-wrapper .bubble .bubble-arrow.alt {
+  right: -2px;
+  bottom: 40px;
+  left: auto;
+}
+.speech-wrapper .bubble .bubble-arrow:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 9px solid #f5f5f5;
+  border-radius: 0 20px 0;
+  width: 15px;
+  height: 30px;
+  transform: rotate(145deg);
+}
+.speech-wrapper .bubble .bubble-arrow.alt:after {
+  transform: rotate(45deg) scaleY(-1);
+}
+#display_message{
+  height: 85%;
+  padding: 10px;
+  overflow-y: auto;
+}
+#rightside_panel{
+  height: 100vh;
+  width: 100vw;
+  position:fixed;
+}
+#input_area{
+  position: absolute;
+  bottom: 10%;
+  width: 80%;
+}
+
+#user_message{
+  width: 75%;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+#send_button{
+  background-color: #6ba4ff;
+  border-color: #b5d1ff;
+  border-radius: 50px;
+  padding: 7px;
+}
+
+#name-container{
+  text-align: center;
+}
+
+#login-username-btn{
+  border-radius: 10px;
+}
+
+#username-input{
+  border-radius: 10px;
+  padding: 6px;
+}
+
+/* Footer CSS */
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+footer a {
+  padding: 10 px
+}
+
+body {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+footer{
+  margin-top:auto;
+}
+
