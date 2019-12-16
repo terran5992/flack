@@ -164,6 +164,6 @@ def on_leave(data):
     send({'msg':username + ' has left the chat'}, room=room)
 
 if __name__ == '__main__':
-    socketio.run(app)
+    app.run()
 
 # Do not use flask run as it wont have socketio wrapped
