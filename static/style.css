@@ -103,7 +103,7 @@ body {
   position:fixed;
 }
 #input_area{
-  position: relative;
+  position: fixed;
   bottom: 15%;
   width: 80%;
 }
