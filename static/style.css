@@ -93,7 +93,7 @@ body {
   transform: rotate(45deg) scaleY(-1);
 }
 #display_message{
-  height: 85%;
+  height: 60%;
   padding: 10px;
   overflow-y: auto;
 }
@@ -103,8 +103,8 @@ body {
   position:fixed;
 }
 #input_area{
-  position: absolute;
-  bottom: 10%;
+  position: relative;
+  bottom: -5%;
   width: 80%;
 }
 
