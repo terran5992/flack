@@ -6,6 +6,7 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
 
     // connect to the socket, can use either a dynamic or harcoded url
     var socket = io.connect('https://' + document.domain + ':' + location.port);
+    console.log('HELLO U FUCK')
 
     //declaring global 'room' variable
     let room = "Green";
