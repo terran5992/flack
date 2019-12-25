@@ -128,7 +128,7 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
     });
 
     // Creates a private socket to connect to 
-    var private_socket = io('http://' + document.domain + ':' + location.port + '/private'); 
+    // var private_socket = io('http://' + document.domain + ':' + location.port + '/private'); 
 
     // What happens when you click the button to change username
     $('#send_username').on('click',function(){
