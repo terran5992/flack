@@ -6,8 +6,8 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
 
     // connect to the socket, can use either a dynamic or harcoded url
     var protocol = window.location.protocol;
-    var socket = io.connect(protocol + '//' + document.domain + ':' + location.port + namespace);
-    
+    var socket = io.connect(protocol + '//' + document.domain + ':' + location.port);
+
     //declaring global 'room' variable
     let room = "Green";
     joinRoom("Green");
