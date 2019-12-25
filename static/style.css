@@ -103,7 +103,7 @@ body {
   position:fixed;
 }
 #input_area{
-  position: fixed;
+  position: absolute;
   bottom: 15%;
   width: 80%;
 }
@@ -163,5 +163,15 @@ body {
 
 footer{
   margin-top:auto;
+}
+
+.sidebar-footer{
+  position: absolute;
+  bottom: 0;
+}
+
+#delete{
+  width: 240px;
+  color: firebrick;
 }
 

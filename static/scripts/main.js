@@ -115,9 +115,16 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
     });
 
     $('#create_room_btn').on('click', function() { // what happens when button is clicked
-        var newroomname = $('#inlineFormInputGroup').val();
-        socket.emit('new_room', {'room_name': newroomname}); // sends the message to server // how does that link w top func??
-        $('#inlineFormInputGroup').val(''); // emptys out the input field after submit
+        if ($.trim($('#inlineFormInputGroup').val()) != ""){
+            var newroomname = $('#inlineFormInputGroup').val();
+            socket.emit('new_room', {'room_name': newroomname}); // sends the message to server // how does that link w top func??
+            $('#inlineFormInputGroup').val(''); // emptys out the input field after submit
+        }else{
+            printSysMsg("Please Enter a Valid Room Name")
+            scrollDownChatWindow();
+        }
+
+
     });
 
     // Creates a private socket to connect to 
@@ -180,7 +187,6 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
 
         // Clears Message Area
         document.querySelector('#display_message').innerHTML = '';
-        // Prints a user has joined the page
 
         // Autofocus on text box
         document.querySelector("#user_message").focus();        
@@ -198,8 +204,14 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
     let msg = document.getElementById("user_message");
     msg.addEventListener("keyup", function(event) {
         event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("send_button").click();
+            if(document.getElementById('user_message').value===""){
+                document.getElementById("send_button").disabled = true;
+            }else{
+                document.getElementById("send_button").disabled = false;
+                if (event.keyCode === 13) {
+                document.getElementById("send_button").click();
+                document.getElementById("send_button").disabled = true;
+            }
         }
     });
 
@@ -208,5 +220,27 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
         const chatWindow = document.querySelector("#display_message");
         chatWindow.scrollTop = chatWindow.scrollHeight;
     };
+
+    // Sends Delete Request to server
+    $('#conf_delete').on('click', function() { // what happens when button is clicked
+        const current_room = room;
+        // Clears Message Area
+        document.querySelector('#display_message').innerHTML = '';
+
+        // Autofocus on text box
+        document.querySelector("#user_message").focus();  
+        socket.emit('delete',{'current_room':current_room, 'username': username}); // sends the message to server // how does that link w top func??
+    });
+
+    // Receives From Server Delete Confirmation removes it from Site
+    socket.on('conf_delete', function(data){
+        const newroom = data.room
+        const oldroom = data.oldroom
+        room = newroom; 
+        // Room not reassigned 
+        $(".select-room:contains('"+oldroom+"')").remove();
+
+    });
+
 
 });

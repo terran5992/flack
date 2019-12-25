@@ -135,11 +135,42 @@ def on_message(data):
     
     send({"username": obj.username , "msg": obj.message, "timestamp": obj.timestamp}, room=room)
 
+@socketio.on('delete')
+def delete(payload):
+    oldroom = payload['current_room']
+    username = payload['username']
+    leave_room(oldroom)
+    msg = f'Chatroom was closed by {username}'
+    send({"msg": msg}, room=oldroom)
 
+    # Deletes the room from the server
+    del(rooms[oldroom])
 
+    #Joins the room if there is one still available
+    if len(rooms) >= 1 :
+        room_list = []
+        for name in rooms :
+            room_list.append(name)
+        newroom = room_list[-1]
 
+        # Join room Function
+        join_room(newroom)
+        room = newroom
+        emit('conf_delete', {'room':room, 'oldroom':oldroom})
+        # gets the username and change the room that it is in
+        users[session.get('username')]=room
+        #Gets history and formats it 
+        lst = []
+        for msg in rooms[room]['messages']:
+            lst.append({"msg":msg.message, "username": msg.username, "timestamp": msg.timestamp})
+        emit('get_history', {'history': lst})
+        send({'msg' :username + ' has entered the '+ room +' chat'}, room=room)
+    else:
+        emit('conf_delete')
 
-
+            
+        
+    
 
 
 @socketio.on('join')
