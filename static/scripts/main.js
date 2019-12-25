@@ -131,34 +131,34 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
     // var private_socket = io('http://' + document.domain + ':' + location.port + '/private'); 
 
     // What happens when you click the button to change username
-    $('#send_username').on('click',function(){
-        var newusername = $('#username').val();
-        var oldusername = document.getElementById("change_username_btn").innerHTML;
-        private_socket.emit('username',{'newusername' : newusername, 'oldusername': oldusername});
-        $('#username').val('');
-    });
+    // $('#send_username').on('click',function(){
+    //     var newusername = $('#username').val();
+    //     var oldusername = document.getElementById("change_username_btn").innerHTML;
+    //     private_socket.emit('username',{'newusername' : newusername, 'oldusername': oldusername});
+    //     $('#username').val('');
+    // });
 
     // When the client receives "receive_username" event
-    private_socket.on('receive_username', function(data){
-        var newusername = data.username;
-        $("#logout_btn").attr("hidden", false);
+    // private_socket.on('receive_username', function(data){
+    //     var newusername = data.username;
+    //     $("#logout_btn").attr("hidden", false);
 
-        document.getElementById("change_username_btn").innerHTML = newusername;
+    //     document.getElementById("change_username_btn").innerHTML = newusername;
 
-    });
+    // });
 
     // When the client clicks to send a private message
-    $('#send_private_message').on('click', function(){
-        var recipient = $('#send_to_username').val();
-        var message_to_send = $('#private_message').val();
-        var sender = document.getElementById("username-navbar").innerHTML;
-        private_socket.emit('private_message', {'username': recipient , 'message' : message_to_send, 'sender': sender});
+    // $('#send_private_message').on('click', function(){
+    //     var recipient = $('#send_to_username').val();
+    //     var message_to_send = $('#private_message').val();
+    //     var sender = document.getElementById("username-navbar").innerHTML;
+    //     private_socket.emit('private_message', {'username': recipient , 'message' : message_to_send, 'sender': sender});
 
-    });
+    // });
 
-    private_socket.on('new_private_message', function(msg){
-        alert(msg);
-    });
+    // private_socket.on('new_private_message', function(msg){
+    //     alert(msg);
+    // });
 
 
     document.querySelectorAll('.select-room').forEach(a => {
