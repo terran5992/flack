@@ -6,7 +6,6 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
 
     // connect to the socket, can use either a dynamic or harcoded url
     var socket = io.connect('https://' + document.domain + ':' + location.port);
-    console.log('HELLO U FUCK')
 
     //declaring global 'room' variable
     let room = "Green";
@@ -43,7 +42,6 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
     });
 
     socket.on('get_history', function(data){
-        console.log('Recevied History')
         // For each item in data
         // append data.history to #display_message
         let hist = data.history;
