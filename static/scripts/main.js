@@ -242,7 +242,4 @@ $(document).ready(function(){ // When document is loaded and ready, run this fun
 
     });
 
-    console.log('Loaded')
-
-
 });
