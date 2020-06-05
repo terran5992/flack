@@ -1,6 +1,6 @@
 # Flack
 
-[Link to live website here](https://flackapp4.herokuapp.com/)
+[Link to live website here](http://flackapp4.herokuapp.com/)
 
 An intuitive web chat application, not at all inspired by slack 
 
